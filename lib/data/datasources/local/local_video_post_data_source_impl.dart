@@ -12,7 +12,6 @@ class LocalVideoPostDataSource extends VideoPostDataSource {
 
   @override
   Future<List<VideoPost>> getTrendingVideosByPage(int page) async {
-    await Future.delayed(const Duration(seconds: 3));
     final List<VideoPost> newVideos = videoPosts
         .map((video) => LocalVideoModel.fromJson(video).toVideoPostEntity())
         .toList();

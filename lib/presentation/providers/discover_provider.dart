@@ -12,8 +12,6 @@ class DiscoverProvider extends ChangeNotifier {
   DiscoverProvider({required this.videoPostRepository});
 
   Future<void> loadNextPage() async {
-    //await Future.delayed(const Duration(seconds: 2));
-
     final newVideos = await videoPostRepository.getTrendingVideosByPage(1);
     videos.addAll(newVideos);
     initialLoading = false;
